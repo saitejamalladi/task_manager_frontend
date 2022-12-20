@@ -23,6 +23,7 @@ const Alert = styled(MuiAlert)(spacing);
 const TextField = styled(MuiTextField)(spacing);
 
 const Wrapper = styled(Paper)`
+  width: 90%;
   padding: ${(props) => props.theme.spacing(6)}px;
   ${(props) => props.theme.breakpoints.up("md")} {
     padding: ${(props) => props.theme.spacing(10)}px;
@@ -30,8 +31,6 @@ const Wrapper = styled(Paper)`
 `;
 
 const BrandTitle = styled(Typography)`
-  text-transform: uppercase;
-  color: orange;
   font-size: 24px;
   text-align: center;
   font-weight: ${(props) => props.theme.typography.fontWeightBold};
@@ -50,7 +49,7 @@ function SignIn() {
     <Wrapper>
       <Helmet title="Sign In" />
       <Grid container direction={"column"} justify="center" alignItems="center">
-        <BrandTitle variant="body1" gutterBottom>
+        <BrandTitle variant="body1" gutterBottom color={"primary"}>
           Task Manager
         </BrandTitle>
       </Grid>
@@ -60,7 +59,7 @@ function SignIn() {
 
       <Formik
         initialValues={{
-          name: "",
+          name: "Friduric Dimitrij",
           submit: false,
         }}
         validationSchema={Yup.object().shape({
